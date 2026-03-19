@@ -19,3 +19,12 @@ function validarIntent(intent) {
     let pistes = ['×', '×', '×', '×']
     let copiaCodi = [...codiSecret]
     let copiaIntent = [...intent]
+
+      // Primera passada: coincidències exactes
+    for (let i = 0; i < 4; i++) {
+        if (copiaIntent[i] === copiaCodi[i]) {
+            pistes[i] = '1'
+            copiaCodi[i] = null
+            copiaIntent[i] = null
+        }
+    }
