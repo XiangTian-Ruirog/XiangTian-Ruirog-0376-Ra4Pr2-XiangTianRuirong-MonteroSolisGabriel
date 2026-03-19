@@ -45,3 +45,8 @@ function validarIntent(intent) {
     window.pistes = pistes
     return pistes
 }
+
+// Exportar funcions
+window.codiSecret = codiSecret
+window.generarCodiSecret = generarCodiSecret
+window.validarIntent = validarIntent
