@@ -85,3 +85,12 @@ function handleEnviarClick() {
         updateRondesCounter()
     }
 }
+
+function updateRondesCounter() {
+    document.getElementById('rondes-restants').textContent = rondesRestants
+}
+
+function disableInputs() {
+    document.querySelectorAll('.code-input').forEach(select => select.disabled = true)
+    document.getElementById('btn-enviar').disabled = true
+}
