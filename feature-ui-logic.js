@@ -20,3 +20,22 @@ function initSelectors() {
         select.value = '0'
     })
 }
+
+function logTerminal(missatge, tipus) {
+    const terminal = document.getElementById('terminal')
+    const newLine = document.createElement('p')
+    newLine.className = `line ${tipus}`
+    
+    const timestamp = new Date().toLocaleTimeString()
+    
+    if (tipus === 'exit') {
+        newLine.innerHTML = `[${timestamp}] ✓ ${missatge}`
+    } else if (tipus === 'error') {
+        newLine.innerHTML = `[${timestamp}] ✗ ${missatge}`
+    } else {
+        newLine.innerHTML = `[${timestamp}] ${missatge}`
+    }
+    
+    terminal.appendChild(newLine)
+    terminal.scrollTop = terminal.scrollHeight
+}
