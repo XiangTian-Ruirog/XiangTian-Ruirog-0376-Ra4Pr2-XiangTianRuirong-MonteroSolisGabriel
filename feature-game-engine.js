@@ -28,3 +28,20 @@ function validarIntent(intent) {
             copiaIntent[i] = null
         }
     }
+
+        // Segona passada: números correctes en posició incorrecta
+    for (let i = 0; i < 4; i++) {
+        if (copiaIntent[i] === null) continue
+       
+        for (let j = 0; j < 4; j++) {
+            if (copiaCodi[j] !== null && copiaIntent[i] === copiaCodi[j]) {
+                pistes[i] = 'Ø'
+                copiaCodi[j] = null
+                break
+            }
+        }
+    }
+   
+    window.pistes = pistes
+    return pistes
+}
