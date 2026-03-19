@@ -12,6 +12,7 @@ Repositori: 0376-Ra4Pr2-XiangTianRuirong-MonteroSolisGabriel
  * Interficie
  * Exemple de joc
  * URL del Repositori Public
+ * URL del Site
 
 # Descripció del Projecte
 
@@ -65,3 +66,8 @@ Aquest projecte consisteix en la desenvolupació d'un lloc anomenat Mastermind N
 # URL del Repositori Públic
 
 [Enllaç al repositori GitHub](https://github.com/XiangTian-Ruirog/XiangTian-Ruirog-0376-Ra4Pr2-XiangTianRuirong-MonteroSolisGabriel.git)
+
+# URL del Site
+
+[Enllaç al site](https://xiangtian-ruirog.github.io/XiangTian-Ruirog-0376-Ra4Pr2-XiangTianRuirong-MonteroSolisGabriel/)
+
