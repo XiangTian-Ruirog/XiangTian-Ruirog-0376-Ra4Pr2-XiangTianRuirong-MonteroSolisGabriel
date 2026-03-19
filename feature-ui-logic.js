@@ -1,3 +1,5 @@
+// feature-ui-logic.js - Estudiant A
+
 const MAX_RONDES = 5
 let rondesRestants = MAX_RONDES
 
@@ -39,12 +41,6 @@ function logTerminal(missatge, tipus) {
     terminal.appendChild(newLine)
     terminal.scrollTop = terminal.scrollHeight
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    initSelectors()
-    setupEventListeners()
-    logTerminal('SYSTEM: Terminal inicialitzada. Tens 5 intents.', 'normal')
-})
 
 function setupEventListeners() {
     document.getElementById('btn-enviar').addEventListener('click', handleEnviarClick)
