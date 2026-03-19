@@ -39,3 +39,49 @@ function logTerminal(missatge, tipus) {
     terminal.appendChild(newLine)
     terminal.scrollTop = terminal.scrollHeight
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    initSelectors()
+    setupEventListeners()
+    logTerminal('SYSTEM: Terminal inicialitzada. Tens 5 intents.', 'normal')
+})
+
+function setupEventListeners() {
+    document.getElementById('btn-enviar').addEventListener('click', handleEnviarClick)
+}
+
+function getIntentValues() {
+    const intent = []
+    document.querySelectorAll('.code-input').forEach(select => {
+        intent.push(parseInt(select.value))
+    })
+    return intent
+}
+
+function handleEnviarClick() {
+    if (rondesRestants <= 0) {
+        logTerminal('No queden més intents.', 'error')
+        return
+    }
+    
+    const intent = getIntentValues()
+    
+    if (typeof window.validarIntent === 'function') {
+        const pistes = window.validarIntent(intent)
+        logTerminal(`→ Intent ${MAX_RONDES - rondesRestants + 1}: [${intent.join(' ')}] → [${pistes.join(' ')}]`, 'normal')
+        rondesRestants--
+        updateRondesCounter()
+        
+        if (pistes.every(p => p === '1')) {
+            logTerminal('VICTORIA! Codi desactivat!', 'exit')
+            disableInputs()
+        } else if (rondesRestants === 0) {
+            logTerminal(`Game Over. El codi era: [${window.codiSecret.join(' ')}]`, 'error')
+            disableInputs()
+        }
+    } else {
+        logTerminal(`DEBUG - Intent: [${intent.join(' ')}]`, 'normal')
+        rondesRestants--
+        updateRondesCounter()
+    }
+}
